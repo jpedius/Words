@@ -4,4 +4,4 @@ description=Words - This is a Playdate game.
 bundleID=com.jpedius.Words
 version=1.0
 imagePath=SystemAssets/
-buildNumber=55
+buildNumber=59

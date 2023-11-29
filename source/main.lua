@@ -4426,6 +4426,7 @@ scrambled = MyScrambled(words, 3)
 
 local width  = 200
 local height = 120
+local flip = false
 
 function playdate.update() 
 
@@ -4436,14 +4437,13 @@ function playdate.update()
     local w,h = gfx.getTextSize(words[pos])
 
     local mfw = math.floor((width / 2) - (w / 2))
-    local mfh = math.floor((height / 4) - (h / 4))
+    local mfh = math.floor((height / 2) - (h / 2))
 
-    gfx.drawText(words[pos], mfw, mfh)
-
-    mfw = math.floor((width / 2) - (w / 2))
-    mfh = math.floor(((height / 4) - (h / 2)) + 60)
-
-    gfx.drawText(scrambled[pos], mfw, mfh)
+	if flip == true then
+    	gfx.drawText(words[pos], mfw, mfh)
+	else
+		gfx.drawText(scrambled[pos], mfw, mfh)
+	end
 
 end
 
@@ -4459,4 +4459,14 @@ function playdate.rightButtonDown()
     if pos == (#words + 1) then
         pos = 1
     end
+end
+
+function playdate.BButtonDown()
+	flip = true
+	--print(flip)
+end
+
+function playdate.BButtonUp()
+	flip = false
+	--print(flip)
 end
