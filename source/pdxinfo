@@ -1,0 +1,7 @@
+name=Words
+author=JP McDowell
+description=Words - This is a Playdate game.
+bundleID=com.jpedius.Words
+version=1.0
+imagePath=SystemAssets/
+buildNumber=1
