@@ -2,6 +2,7 @@ import "CoreLibs/graphics"
 
 import "words.lua"
 
+local pd <const> = playdate
 local gfx <const> = playdate.graphics
 local dply <const> = playdate.display
 
@@ -53,7 +54,7 @@ local width  = 200
 local height = 120
 local flip = false
 
-function playdate.update() 
+function pd.update()
 
     gfx.clear()
 
@@ -72,26 +73,26 @@ function playdate.update()
 
 end
 
-function playdate.leftButtonDown()
+function pd.leftButtonDown()
     pos = pos - 1
     if pos == 0 then
         pos = #words
     end
 end
 
-function playdate.rightButtonDown()
+function pd.rightButtonDown()
     pos = pos + 1
     if pos == (#words + 1) then
         pos = 1
     end
 end
 
-function playdate.BButtonDown()
+function pd.BButtonDown()
 	flip = true
 	--print(flip)
 end
 
-function playdate.BButtonUp()
+function pd.BButtonUp()
 	flip = false
 	--print(flip)
 end
